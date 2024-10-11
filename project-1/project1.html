@@ -1,0 +1,28 @@
+<doctype html>
+<!-- Copyright 2020, Cem Yuksel, University of Utah -->
+<html>
+	<head>
+		<title>CS 4600 - Project 1</title>
+		<script type="text/javascript" id="includedscript" src="project1.js"></script>
+		<script src="script.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="canvasdiv" onmousedown="moveBegin(this)" onmouseup="moveEnd(this)" onmouseout="moveEnd(this)"
+			onmousemove="move(this)"><canvas id="canvas"></div>
+		<div id="controldiv">
+			<div id="controlholder">
+				<a id="addimage" href="javascript:addImage()">+</a>
+				<input type="range" min="0" max="100" value="100" id="opac" onchange="opacChange(this)"
+					disabled="true" />
+				<select name="blend_type" id="blend_type">
+					<option value="alpha_blending"> Alpha Blending </option>
+					<option value="additive_blending"> Additive Blending </option>
+					<option value="difference_blending"> Difference Blending </option>
+					<option value="multiplicative_blending"> Multiplicative Blending </option>
+				</select>
+				<div id="layers" ondrop="layerDrop()" ondragover="layerDragOver()"></div>
+			</div>
+		</div>
+	</body>
+</html>
